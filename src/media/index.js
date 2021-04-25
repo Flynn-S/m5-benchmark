@@ -5,6 +5,7 @@ import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 import { v2 } from "cloudinary";
 import { getMedia, writeMedia } from "../lib/fs-tools.js";
+import { v4 as uniqid } from "uuid";
 
 // const cloudinaryStorage = new CloudinaryStorage({
 //     cloudinary: v2,
@@ -64,21 +65,17 @@ route.get("/:id", async (req, res, next) => {
 route.post(
   "/",
   [
-    check("Title").exists().isString().withMessage("Title must be a string"),
-    check("Year")
-      .exists()
+    check("Title")
       .isString()
-      .withMessage("Year must be a string e.g. '2001'"),
-    // check("imdbID").exists().withMessage("A imdbID must be included"),
-    check("Type")
-      .exists()
-      .isString()
-      .withMessage("Please specify the type of media e.g. 'movie' "),
+      .notEmpty()
+      .withMessage("Title is mandatory field"),
+    check("Year").isString().notEmpty().withMessage("Year is mandatory field"),
+    check("Type").isString().notEmpty().withMessage("Type is mandatory field"),
   ],
   async (req, res, next) => {
     try {
       const errors = validationResult(req);
-
+      console.log(errors);
       if (!errors.isEmpty()) {
         // if we had errors
         const err = new Error();

@@ -96,5 +96,12 @@
     "imdbID": "tt4154796",
     "Type": "movie",
     "Poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+  },
+  {
+    "Title": "Fargo",
+    "Year": "1996",
+    "Type": "movie",
+    "Poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffargo.fandom.com%2Fwiki%2FFargo_(film)&psig=AOvVaw2jtAmpjuJlSGhNDfpjY7EI&ust=1619275076616000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJj6rPTLlPACFQAAAAAdAAAAABAJ",
+    "imdbID": "38153cdc-6538-4b4a-81c9-6c645d8c3ae0"
   }
 ]

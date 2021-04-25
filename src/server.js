@@ -30,6 +30,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+app.use(express.json());
+
 //ENDPOINTS / ROUTERS
 app.use("/media", mediaRoutes);
 // app.use("/reviews", reviewRoutes);
